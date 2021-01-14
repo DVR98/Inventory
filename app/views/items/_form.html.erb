@@ -1,0 +1,67 @@
+<%= form_with(model: item, local: true) do |form| %>
+  <% if item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :WAREHOUSE %>
+    <%= form.text_field :WAREHOUSE, id: :item_WAREHOUSE %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ITEM_NUMBER %>
+    <%= form.text_field :ITEM_NUMBER, id: :item_ITEM_NUMBER %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ITEM_DESCRIPTION %>
+    <%= form.text_field :ITEM_DESCRIPTION, id: :item_ITEM_DESCRIPTION %>
+  </div>
+
+  <div class="field">
+    <%= form.label :DEPARTMENT %>
+    <%= form.text_field :DEPARTMENT, id: :item_DEPARTMENT %>
+  </div>
+
+  <div class="field">
+    <%= form.label :PCLASS %>
+    <%= form.text_field :PCLASS, id: :item_PCLASS %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ITEM_SIZE %>
+    <%= form.text_field :ITEM_SIZE, id: :item_ITEM_SIZE %>
+  </div>
+
+  <div class="field">
+    <%= form.label :STORE_PACK %>
+    <%= form.number_field :STORE_PACK, id: :item_STORE_PACK %>
+  </div>
+
+  <div class="field">
+    <%= form.label :BSP %>
+    <%= form.text_field :BSP, id: :item_BSP %>
+  </div>
+
+  <div class="field">
+    <%= form.label :RSP %>
+    <%= form.text_field :RSP, id: :item_RSP %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ZONE %>
+    <%= form.number_field :ZONE, id: :item_ZONE %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+wb = xlsx_package.workbook
+
+wb.styles do |style|
+  project_heading = style.add_style(b: true, sz: 14)
+  heading = style.add_style(b: true)
+
+  wb.add_worksheet(name: "Items") do |sheet|
+    sheet.add_row ["WAREHOUSE", "ITEM_NUMBER", "ITEM_DESCRIPTION", "DEPARTMENT", "PCLASS","ITEM_SIZE","STORE_PACK","BSP","RSP","ZONE"]
+    # Create entries for each item
+    @items.each do |item|
+      sheet.add_row [item.id, item.WAREHOUSE, item.ITEM_NUMBER, item.ITEM_DESCRIPTION, item.DEPARTMENT, item.PCLASS, item.ITEM_SIZE, item.STORE_PACK, item.BSP, item.RSP, item.ZONE]
+    end
+  end
+end

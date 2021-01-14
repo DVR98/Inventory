@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<p id="notice"><%= notice %></p>
+
+<div>
+<h1>Inventory</h1>
+<%=
+  link_to 'Download as Excel',
+  items_path(format: :xlsx)
+%>
+<%=
+  link_to 'Upload from Excel',
+  new_items_import_path
+%>
+<%= link_to 'New Item', new_item_path %>
+</div>
+<table class="w3-table-all">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>WAREHOUSE</th>
+      <th>ITEM_NUMBER</th>
+      <th>ITEM_DESCRIPTION</th>
+      <th>DEPARTMENT</th>
+      <th>PCLASS</th>
+      <th>ITEM_SIZE</th>
+      <th>STORE_PACK</th>
+      <th>BSP</th>
+      <th>RSP</th>
+      <th>ZONE</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.id %></td>
+        <td><%= item.WAREHOUSE %></td>
+        <td><%= item.ITEM_NUMBER %></td>
+        <td><%= item.ITEM_DESCRIPTION %></td>
+        <td><%= item.DEPARTMENT %></td>
+        <td><%= item.PCLASS %></td>
+        <td><%= item.ITEM_SIZE %></td>
+        <td><%= item.STORE_PACK %></td>
+        <td><%= item.BSP %></td>
+        <td><%= item.RSP %></td>
+        <td><%= item.ZONE %></td>
+        <td><%= link_to 'Show', item %></td>
+        <td><%= link_to 'Edit', edit_item_path(item) %></td>
+        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Warehouse:</strong>
+  <%= @item.WAREHOUSE %>
+</p>
+
+<p>
+  <strong>Item number:</strong>
+  <%= @item.ITEM_NUMBER %>
+</p>
+
+<p>
+  <strong>Item Description:</strong>
+  <%= @item.ITEM_DESCRIPTION %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @item.DEPARTMENT %>
+</p>
+
+<p>
+  <strong>PCLASS:</strong>
+  <%= @item.PCLASS %>
+</p>
+
+<p>
+  <strong>Item Size:</strong>
+  <%= @item.ITEM_SIZE %>
+</p>
+
+<p>
+  <strong>Store pack:</strong>
+  <%= @item.STORE_PACK %>
+</p>
+
+<p>
+  <strong>BSP:</strong>
+  <%= @item.BSP %>
+</p>
+
+<p>
+  <strong>RSP:</strong>
+  <%= @item.RSP %>
+</p>
+
+<p>
+  <strong>Zone:</strong>
+  <%= @item.ZONE %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
+
